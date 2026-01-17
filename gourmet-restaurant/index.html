@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>La Maison - Fine Dining Experience</title>
+    <meta
+      name="description"
+      content="Experience exquisite fine dining at La Maison. Award-winning cuisine in an elegant setting."
+    />
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              gold: "#d4af37",
+              cream: "#fdfbf7",
+              charcoal: "#1a1a1a",
+            },
+            fontFamily: {
+              serif: ["Playfair Display", "serif"],
+              sans: ["Lato", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Lato", sans-serif;
+      }
+      .font-serif {
+        font-family: "Playfair Display", serif;
+      }
+    </style>
+  </head>
+  <body class="bg-cream text-charcoal antialiased">
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-charcoal/95 backdrop-blur-sm">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-20">
+          <!-- Logo -->
+          <a href="#" class="flex items-center space-x-2">
+            <span class="text-gold text-3xl font-serif font-bold tracking-wider"
+              >La Maison</span
+            >
+          </a>
+
+          <!-- Desktop Menu -->
+          <div class="hidden md:flex items-center space-x-8">
+            <a
+              href="#about"
+              class="text-white/80 hover:text-gold transition-colors text-sm uppercase tracking-widest"
+              >About</a
+            >
+            <a
+              href="#menu"
+              class="text-white/80 hover:text-gold transition-colors text-sm uppercase tracking-widest"
+              >Menu</a
+            >
+            <a
+              href="#gallery"
+              class="text-white/80 hover:text-gold transition-colors text-sm uppercase tracking-widest"
+              >Gallery</a
+            >
+            <a
+              href="#contact"
+              class="text-white/80 hover:text-gold transition-colors text-sm uppercase tracking-widest"
+              >Contact</a
+            >
+            <a
+              href="#reservation"
+              class="px-6 py-3 bg-gold text-charcoal font-bold text-sm uppercase tracking-widest hover:bg-gold/90 transition-colors"
+              >Reserve Table</a
+            >
+          </div>
+
+          <!-- Mobile Menu Button -->
+          <label for="mobile-menu" class="md:hidden text-white cursor-pointer">
+            <svg
+              class="w-8 h-8"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              ></path>
+            </svg>
+          </label>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Mobile Menu Toggle -->
+    <input type="checkbox" id="mobile-menu" class="hidden peer" />
+    <div
+      class="hidden peer-checked:flex fixed inset-0 z-40 bg-charcoal flex-col items-center justify-center space-y-8 md:hidden"
+    >
+      <a
+        href="#about"
+        class="text-2xl text-white hover:text-gold transition-colors font-serif"
+        >About</a
+      >
+      <a
+        href="#menu"
+        class="text-2xl text-white hover:text-gold transition-colors font-serif"
+        >Menu</a
+      >
+      <a
+        href="#gallery"
+        class="text-2xl text-white hover:text-gold transition-colors font-serif"
+        >Gallery</a
+      >
+      <a
+        href="#contact"
+        class="text-2xl text-white hover:text-gold transition-colors font-serif"
+        >Contact</a
+      >
+      <a
+        href="#reservation"
+        class="mt-4 px-8 py-4 bg-gold text-charcoal font-bold uppercase tracking-widest"
+        >Reserve Table</a
+      >
+      <label for="mobile-menu" class="mt-8 text-white/50 cursor-pointer"
+        >Close Menu</label
+      >
+    </div>
+
+    <!-- Hero Section -->
+    <section class="relative h-screen flex items-center justify-center">
+      <!-- Background Image -->
+      <div class="absolute inset-0 z-0">
+        <img
+          src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
+          alt="Restaurant Interior"
+          class="w-full h-full object-cover"
+        />
+        <div class="absolute inset-0 bg-charcoal/60"></div>
+      </div>
+
+      <!-- Hero Content -->
+      <div class="relative z-10 text-center text-white px-4 max-w-4xl mx-auto">
+        <p class="text-gold uppercase tracking-[0.3em] text-sm mb-6 font-light">
+          Est. 1985
+        </p>
+        <h1
+          class="font-serif text-5xl md:text-7xl lg:text-8xl font-bold mb-8 leading-tight"
+        >
+          Where Every Meal<br />Becomes a
+          <span class="italic text-gold">Memory</span>
+        </h1>
+        <p
+          class="text-lg md:text-xl text-white/80 max-w-2xl mx-auto mb-12 leading-relaxed"
+        >
+          Experience the art of fine dining with our award-winning cuisine,
+          impeccable service, and an atmosphere that transports you to the heart
+          of Paris.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a
+            href="#reservation"
+            class="px-10 py-4 bg-gold text-charcoal font-bold uppercase tracking-widest hover:bg-white transition-colors text-sm"
+            >Make a Reservation</a
+          >
+          <a
+            href="#menu"
+            class="px-10 py-4 border-2 border-white text-white font-bold uppercase tracking-widest hover:bg-white hover:text-charcoal transition-colors text-sm"
+            >Explore Menu</a
+          >
+        </div>
+      </div>
+
+      <!-- Scroll Indicator -->
+      <div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
+        <svg
+          class="w-6 h-6 text-gold"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M19 14l-7 7m0 0l-7-7m7 7V3"
+          ></path>
+        </svg>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 lg:py-32 bg-cream">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+          <!-- Image Grid -->
+          <div class="grid grid-cols-2 gap-4">
+            <img
+              src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+              alt="Chef plating"
+              class="rounded-lg shadow-xl w-full h-64 object-cover"
+            />
+            <img
+              src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+              alt="Fine dining dish"
+              class="rounded-lg shadow-xl w-full h-64 object-cover mt-8"
+            />
+            <img
+              src="https://images.unsplash.com/photo-1559339352-11d035aa65de?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+              alt="Restaurant ambiance"
+              class="rounded-lg shadow-xl w-full h-64 object-cover col-span-2"
+            />
+          </div>
+
+          <!-- Text Content -->
+          <div class="space-y-8">
+            <p class="text-gold uppercase tracking-[0.3em] text-sm font-light">
+              Our Story
+            </p>
+            <h2 class="font-serif text-4xl md:text-5xl font-bold leading-tight">
+              A Culinary Journey<br />Like No Other
+            </h2>
+            <p class="text-lg text-charcoal/70 leading-relaxed">
+              Founded by acclaimed Chef Antoine Dubois, La Maison has been a
+              beacon of culinary excellence for nearly four decades. Our
+              philosophy is simple: source the finest ingredients, honor
+              traditional techniques, and create dishes that tell a story.
+            </p>
+            <p class="text-lg text-charcoal/70 leading-relaxed">
+              Every plate that leaves our kitchen is a testament to our passion
+              for gastronomy and our commitment to providing you with an
+              unforgettable dining experience.
+            </p>
+            <div class="flex items-center space-x-8 pt-4">
+              <div>
+                <p class="text-4xl font-serif font-bold text-gold">3</p>
+                <p class="text-sm uppercase tracking-widest text-charcoal/60">
+                  Michelin Stars
+                </p>
+              </div>
+              <div class="w-px h-16 bg-charcoal/20"></div>
+              <div>
+                <p class="text-4xl font-serif font-bold text-gold">38</p>
+                <p class="text-sm uppercase tracking-widest text-charcoal/60">
+                  Years of Excellence
+                </p>
+              </div>
+              <div class="w-px h-16 bg-charcoal/20"></div>
+              <div>
+                <p class="text-4xl font-serif font-bold text-gold">150+</p>
+                <p class="text-sm uppercase tracking-widest text-charcoal/60">
+                  Awards Won
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="py-24 lg:py-32 bg-charcoal text-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-20">
+          <p
+            class="text-gold uppercase tracking-[0.3em] text-sm font-light mb-4"
+          >
+            Discover
+          </p>
+          <h2 class="font-serif text-4xl md:text-5xl font-bold">
+            Our Signature Dishes
+          </h2>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-12">
+          <!-- Dish 1 -->
+          <div class="group text-center">
+            <div
+              class="relative overflow-hidden rounded-full w-48 h-48 mx-auto mb-8 border-4 border-gold/30 group-hover:border-gold transition-colors"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1544025162-d76694265947?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                alt="Steak"
+                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+              />
+            </div>
+            <h3 class="font-serif text-2xl font-bold mb-2">
+              Wagyu Beef Tenderloin
+            </h3>
+            <p class="text-white/60 mb-4">
+              Truffle jus, roasted bone marrow, seasonal vegetables
+            </p>
+            <p class="text-gold font-bold text-xl">$145</p>
+          </div>
+
+          <!-- Dish 2 -->
+          <div class="group text-center">
+            <div
+              class="relative overflow-hidden rounded-full w-48 h-48 mx-auto mb-8 border-4 border-gold/30 group-hover:border-gold transition-colors"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1559847844-5315695dadae?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                alt="Lobster"
+                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+              />
+            </div>
+            <h3 class="font-serif text-2xl font-bold mb-2">
+              Maine Lobster Thermidor
+            </h3>
+            <p class="text-white/60 mb-4">
+              Champagne cream, gruyère gratin, fingerling potatoes
+            </p>
+            <p class="text-gold font-bold text-xl">$125</p>
+          </div>
+
+          <!-- Dish 3 -->
+          <div class="group text-center">
+            <div
+              class="relative overflow-hidden rounded-full w-48 h-48 mx-auto mb-8 border-4 border-gold/30 group-hover:border-gold transition-colors"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1563379926898-05f4575a45d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                alt="Pasta"
+                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+              />
+            </div>
+            <h3 class="font-serif text-2xl font-bold mb-2">
+              Black Truffle Risotto
+            </h3>
+            <p class="text-white/60 mb-4">
+              Carnaroli rice, aged parmesan, fresh Périgord truffle
+            </p>
+            <p class="text-gold font-bold text-xl">$89</p>
+          </div>
+
+          <!-- Dish 4 -->
+          <div class="group text-center">
+            <div
+              class="relative overflow-hidden rounded-full w-48 h-48 mx-auto mb-8 border-4 border-gold/30 group-hover:border-gold transition-colors"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                alt="Duck"
+                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+              />
+            </div>
+            <h3 class="font-serif text-2xl font-bold mb-2">Duck à l'Orange</h3>
+            <p class="text-white/60 mb-4">
+              Crispy skin, citrus glaze, pomme purée
+            </p>
+            <p class="text-gold font-bold text-xl">$78</p>
+          </div>
+
+          <!-- Dish 5 -->
+          <div class="group text-center">
+            <div
+              class="relative overflow-hidden rounded-full w-48 h-48 mx-auto mb-8 border-4 border-gold/30 group-hover:border-gold transition-colors"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                alt="Salmon"
+                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+              />
+            </div>
+            <h3 class="font-serif text-2xl font-bold mb-2">
+              Pan-Seared Salmon
+            </h3>
+            <p class="text-white/60 mb-4">
+              Béarnaise sauce, asparagus, lemon confit
+            </p>
+            <p class="text-gold font-bold text-xl">$68</p>
+          </div>
+
+          <!-- Dish 6 -->
+          <div class="group text-center">
+            <div
+              class="relative overflow-hidden rounded-full w-48 h-48 mx-auto mb-8 border-4 border-gold/30 group-hover:border-gold transition-colors"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1551024506-0bccd828d307?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                alt="Dessert"
+                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+              />
+            </div>
+            <h3 class="font-serif text-2xl font-bold mb-2">
+              Chocolate Soufflé
+            </h3>
+            <p class="text-white/60 mb-4">
+              Valrhona chocolate, vanilla bean ice cream
+            </p>
+            <p class="text-gold font-bold text-xl">$32</p>
+          </div>
+        </div>
+
+        <div class="text-center mt-16">
+          <a
+            href="#"
+            class="inline-block px-10 py-4 border-2 border-gold text-gold font-bold uppercase tracking-widest hover:bg-gold hover:text-charcoal transition-colors text-sm"
+            >View Full Menu</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-24 lg:py-32 bg-cream">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <p
+            class="text-gold uppercase tracking-[0.3em] text-sm font-light mb-4"
+          >
+            Experience
+          </p>
+          <h2 class="font-serif text-4xl md:text-5xl font-bold">
+            A Glimpse Inside
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div class="col-span-2 row-span-2">
+            <img
+              src="https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+              alt="Restaurant"
+              class="w-full h-full object-cover rounded-lg shadow-lg hover:opacity-90 transition-opacity cursor-pointer"
+            />
+          </div>
+          <div>
+            <img
+              src="https://images.unsplash.com/photo-1482275548304-a58859dc31b7?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+              alt="Dish"
+              class="w-full h-48 object-cover rounded-lg shadow-lg hover:opacity-90 transition-opacity cursor-pointer"
+            />
+          </div>
+          <div>
+            <img
+              src="https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+              alt="Bar"
+              class="w-full h-48 object-cover rounded-lg shadow-lg hover:opacity-90 transition-opacity cursor-pointer"
+            />
+          </div>
+          <div>
+            <img
+              src="https://images.unsplash.com/photo-1428515613728-6b4607e44363?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+              alt="Wine"
+              class="w-full h-48 object-cover rounded-lg shadow-lg hover:opacity-90 transition-opacity cursor-pointer"
+            />
+          </div>
+          <div>
+            <img
+              src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+              alt="Kitchen"
+              class="w-full h-48 object-cover rounded-lg shadow-lg hover:opacity-90 transition-opacity cursor-pointer"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-24 lg:py-32 bg-charcoal text-white">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <p class="text-gold uppercase tracking-[0.3em] text-sm font-light mb-4">
+          Testimonials
+        </p>
+        <h2 class="font-serif text-4xl md:text-5xl font-bold mb-16">
+          What Our Guests Say
+        </h2>
+
+        <div class="grid md:grid-cols-3 gap-12">
+          <div class="space-y-6">
+            <div class="flex justify-center text-gold text-2xl">★★★★★</div>
+            <p class="text-white/80 italic text-lg leading-relaxed">
+              "An absolutely magical evening. The food was exquisite, and the
+              service was impeccable. A truly unforgettable experience."
+            </p>
+            <div>
+              <p class="font-bold">Sarah Mitchell</p>
+              <p class="text-white/50 text-sm">Food Critic, NY Times</p>
+            </div>
+          </div>
+          <div class="space-y-6">
+            <div class="flex justify-center text-gold text-2xl">★★★★★</div>
+            <p class="text-white/80 italic text-lg leading-relaxed">
+              "La Maison consistently delivers perfection. We celebrate every
+              special occasion here. It never disappoints."
+            </p>
+            <div>
+              <p class="font-bold">James Rodriguez</p>
+              <p class="text-white/50 text-sm">Regular Guest</p>
+            </div>
+          </div>
+          <div class="space-y-6">
+            <div class="flex justify-center text-gold text-2xl">★★★★★</div>
+            <p class="text-white/80 italic text-lg leading-relaxed">
+              "The black truffle risotto is the best I've ever had. Chef Antoine
+              is a true artist."
+            </p>
+            <div>
+              <p class="font-bold">Emily Chen</p>
+              <p class="text-white/50 text-sm">Travel Blogger</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Reservation Section -->
+    <section id="reservation" class="py-24 lg:py-32 bg-cream">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <p
+            class="text-gold uppercase tracking-[0.3em] text-sm font-light mb-4"
+          >
+            Book Now
+          </p>
+          <h2 class="font-serif text-4xl md:text-5xl font-bold">
+            Make a Reservation
+          </h2>
+        </div>
+
+        <form class="bg-white p-8 md:p-12 rounded-lg shadow-xl">
+          <div class="grid md:grid-cols-2 gap-6">
+            <div>
+              <label
+                class="block text-sm font-bold uppercase tracking-widest text-charcoal/70 mb-2"
+                >Full Name</label
+              >
+              <input
+                type="text"
+                class="w-full border-b-2 border-charcoal/20 py-3 px-0 focus:border-gold outline-none transition-colors bg-transparent"
+                placeholder="John Doe"
+              />
+            </div>
+            <div>
+              <label
+                class="block text-sm font-bold uppercase tracking-widest text-charcoal/70 mb-2"
+                >Email</label
+              >
+              <input
+                type="email"
+                class="w-full border-b-2 border-charcoal/20 py-3 px-0 focus:border-gold outline-none transition-colors bg-transparent"
+                placeholder="john@example.com"
+              />
+            </div>
+            <div>
+              <label
+                class="block text-sm font-bold uppercase tracking-widest text-charcoal/70 mb-2"
+                >Phone</label
+              >
+              <input
+                type="tel"
+                class="w-full border-b-2 border-charcoal/20 py-3 px-0 focus:border-gold outline-none transition-colors bg-transparent"
+                placeholder="+1 (555) 000-0000"
+              />
+            </div>
+            <div>
+              <label
+                class="block text-sm font-bold uppercase tracking-widest text-charcoal/70 mb-2"
+                >Guests</label
+              >
+              <select
+                class="w-full border-b-2 border-charcoal/20 py-3 px-0 focus:border-gold outline-none transition-colors bg-transparent"
+              >
+                <option>2 Guests</option>
+                <option>3 Guests</option>
+                <option>4 Guests</option>
+                <option>5+ Guests</option>
+              </select>
+            </div>
+            <div>
+              <label
+                class="block text-sm font-bold uppercase tracking-widest text-charcoal/70 mb-2"
+                >Date</label
+              >
+              <input
+                type="date"
+                class="w-full border-b-2 border-charcoal/20 py-3 px-0 focus:border-gold outline-none transition-colors bg-transparent"
+              />
+            </div>
+            <div>
+              <label
+                class="block text-sm font-bold uppercase tracking-widest text-charcoal/70 mb-2"
+                >Time</label
+              >
+              <select
+                class="w-full border-b-2 border-charcoal/20 py-3 px-0 focus:border-gold outline-none transition-colors bg-transparent"
+              >
+                <option>6:00 PM</option>
+                <option>7:00 PM</option>
+                <option>8:00 PM</option>
+                <option>9:00 PM</option>
+              </select>
+            </div>
+            <div class="md:col-span-2">
+              <label
+                class="block text-sm font-bold uppercase tracking-widest text-charcoal/70 mb-2"
+                >Special Requests</label
+              >
+              <textarea
+                class="w-full border-b-2 border-charcoal/20 py-3 px-0 focus:border-gold outline-none transition-colors bg-transparent resize-none"
+                rows="3"
+                placeholder="Allergies, celebrations, seating preferences..."
+              ></textarea>
+            </div>
+          </div>
+          <div class="text-center mt-10">
+            <button
+              type="submit"
+              class="px-12 py-4 bg-gold text-charcoal font-bold uppercase tracking-widest hover:bg-charcoal hover:text-gold transition-colors text-sm"
+            >
+              Confirm Reservation
+            </button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 lg:py-32 bg-charcoal text-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-2 gap-16">
+          <div class="space-y-8">
+            <h2 class="font-serif text-4xl md:text-5xl font-bold">Visit Us</h2>
+            <p class="text-white/70 text-lg leading-relaxed">
+              We look forward to welcoming you to La Maison. Our doors are open
+              for lunch and dinner, seven days a week.
+            </p>
+
+            <div class="space-y-6 pt-4">
+              <div class="flex items-start space-x-4">
+                <span class="text-gold text-2xl">📍</span>
+                <div>
+                  <p class="font-bold text-lg">Address</p>
+                  <p class="text-white/70">
+                    123 Gourmet Boulevard<br />Manhattan, New York 10001
+                  </p>
+                </div>
+              </div>
+              <div class="flex items-start space-x-4">
+                <span class="text-gold text-2xl">📞</span>
+                <div>
+                  <p class="font-bold text-lg">Phone</p>
+                  <p class="text-white/70">+1 (212) 555-0123</p>
+                </div>
+              </div>
+              <div class="flex items-start space-x-4">
+                <span class="text-gold text-2xl">🕐</span>
+                <div>
+                  <p class="font-bold text-lg">Hours</p>
+                  <p class="text-white/70">
+                    Lunch: 12:00 PM - 3:00 PM<br />Dinner: 6:00 PM - 11:00 PM
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Map Placeholder -->
+          <div
+            class="bg-white/10 rounded-lg h-80 lg:h-auto flex items-center justify-center"
+          >
+            <div class="text-center">
+              <span class="text-6xl">🗺️</span>
+              <p class="text-white/50 mt-4">Interactive Map</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-charcoal border-t border-white/10 py-12">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div
+          class="flex flex-col md:flex-row justify-between items-center text-center md:text-left gap-6"
+        >
+          <div>
+            <span class="text-gold text-2xl font-serif font-bold"
+              >La Maison</span
+            >
+            <p class="text-white/40 text-sm mt-2">
+              &copy; 2026 La Maison. All rights reserved.
+            </p>
+          </div>
+          <div class="flex space-x-6">
+            <a href="#" class="text-white/40 hover:text-gold transition-colors"
+              >Facebook</a
+            >
+            <a href="#" class="text-white/40 hover:text-gold transition-colors"
+              >Instagram</a
+            >
+            <a href="#" class="text-white/40 hover:text-gold transition-colors"
+              >Twitter</a
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
